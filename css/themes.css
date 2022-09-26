@@ -1,0 +1,30 @@
+@import "./palette.css";
+
+:root {
+  --font-body: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    sans-serif;
+  --font-size: 15px;
+  --width: 300px;
+  --line-height: 1.5;
+  --btn-radius: 0.25em;
+}
+
+.light-theme {
+  --background: #fff;
+  --h-color: var(--gray6);
+  --text-color: var(--gray4);
+  --text-secondary: var(--gray2);
+  --btn-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px;
+  transition: all 0.5s ease;
+}
+
+.dark-theme {
+  --background: var(--gray6);
+  --h-color: #fff;
+  --text-color: var(--gray2);
+  --text-secondary: var(--gray4);
+  transition: all 0.5s ease;
+}

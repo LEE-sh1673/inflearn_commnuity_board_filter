@@ -1,0 +1,65 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
+
+@import "./reset.css";
+@import "./palette.css";
+@import "./themes.css";
+@import "./toggle_switch.css";
+@import "./button.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: var(--width);
+  font-family: var(--font-body);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  background-color: var(--background);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+a:hover {
+  color: var(--blue-dark);
+  text-decoration: underline;
+}
+
+ul {
+  padding-inline-start: 20px;
+  list-style: circle;
+}
+
+ul li {
+  padding: 6px 0;
+}
+
+.container {
+  width: 100%;
+  padding: 24px 20px 12px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title,
+.descriptions {
+  margin: 12px 0;
+}
+
+.title {
+  color: var(--h-color);
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.version-info {
+  color: var(--gray2);
+  font-size: 0.875em;
+  margin-bottom: 12px;
+}

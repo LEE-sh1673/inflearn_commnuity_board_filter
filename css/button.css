@@ -1,0 +1,29 @@
+@import "./palette.css";
+
+.btn {
+  width: 100%;
+  outline: none;
+  padding: 16px;
+  border: none;
+  border-radius: var(--btn-radius);
+  background-color: var(--blue);
+  font-size: 0.9375em;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+  box-shadow: var(--btn-shadow);
+  margin: 6px 0;
+}
+
+.btn:hover {
+  background-color: var(--blue-dark);
+}
+
+.btn#sort__like-btn {
+  background-color: var(--green);
+}
+
+.btn#sort__like-btn:hover {
+  background-color: var(--green-dark);
+}

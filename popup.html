@@ -4,26 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="button.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
-  <body>
-    <h1>인프런 커뮤니티 게시판 정렬기 🌱</h1>
-    <ul>
-      <li>
-        인프런 커뮤니티 게시판의 질문 사항을 정렬해주는 프로그램입니다. 정렬
-        기준은 좋아요, 북마크 순서입니다.
-      </li>
-      <li>
-        <a
-          href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi"
-          target="_newtab"
-          >React Developer Tools</a
-        >가 설치되어있어야 실행 가능합니다.
-      </li>
-    </ul>
-
-    <button id="button">정렬하기</button>
-    <p class="version_info">version 1.0.0</p>
-    <script src="popup.js"></script>
+  <body class="light-theme">
+    <main class="container">
+      <h1 class="title">인프런 커뮤니티 게시판 정렬기 🌱</h1>
+      <ul class="descriptions">
+        <li class="descriptions__item">
+          인프런 커뮤니티 게시판의 질문 사항을 정렬해주는 프로그램입니다.
+        </li>
+        <li class="descriptions__item">
+          좋아요, 북마크 순으로 정렬할 수 있습니다. 내림차순으로 정렬됩니다.
+        </li>
+      </ul>
+      <button class="btn" id="sort__like-btn">좋아요 순으로 정렬하기</button>
+      <button class="btn" id="sort__bookmark-btn">
+        북마크 순으로 정렬하기
+      </button>
+      <div class="theme-toggler">
+        <i class="fa fa-sun-o theme-icon"></i>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+        <i class="fa fa-moon-o theme-icon"></i>
+      </div>
+      <p class="version-info">version 1.0.0</p>
+    </main>
   </body>
+  <script src="popup.js"></script>
+  <script src="./js/theme.js"></script>
 </html>

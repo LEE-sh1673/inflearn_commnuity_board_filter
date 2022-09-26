@@ -1,42 +1,40 @@
-// A function to use as callback
-function doStuffWithDom(domContent) {
-  console.log("I received the following DOM content:\n" + domContent);
-}
-
-function getCurrentTabUrl(callback) {
-  let queryInfo = {
-    active: true,
-    currentWindow: true,
-  };
-
-  chrome.tabs.query(queryInfo, (tabs) => {
-    const urlRegex = /^https?:\/\/(?:[^./?#]+\.)?inflearn\.com/;
-    let tab = tabs[0];
-    let url = tab.url;
-
-    if (urlRegex.test(tab.url)) {
-      chrome.tabs.sendMessage(
-        tab.id,
-        { greeting: "hello" },
-        function (response) {
-          console.log(response.farewell);
-        }
-      );
-      callback(url);
-    }
-  });
-}
-
-function renderURL(statusText) {
-  console.log(statusText);
-}
+let queryInfo = {
+  active: true,
+  currentWindow: true,
+};
 
 document.addEventListener("DOMContentLoaded", () => {
-  const button = document.querySelector("#button");
+  const like_btn = document.querySelector("#sort__like-btn");
+  const bookmark_btn = document.querySelector("#sort__bookmark-btn");
 
-  if (button != null) {
-    button.addEventListener("click", () =>
-      getCurrentTabUrl((url) => renderURL(url))
+  if (like_btn != null) {
+    like_btn.addEventListener("click", () =>
+      displaySortedPage({ action: "sorting", sortby: "like" })
+    );
+  }
+
+  if (bookmark_btn != null) {
+    bookmark_btn.addEventListener("click", () =>
+      displaySortedPage({ action: "sorting", sortby: "bookmark" })
     );
   }
 });
+
+function displaySortedPage(action) {
+  sendMessageOf(action);
+}
+
+function sendMessageOf(action) {
+  const urlRegex = /^https?:\/\/(?:[^./?#]+\.)?inflearn\.com/;
+
+  chrome.tabs.query(queryInfo, (tabs) => {
+    let tab = tabs[0];
+
+    if (urlRegex.test(tab.url)) {
+      chrome.tabs.sendMessage(tab.id, action, (response) => {
+        console.log(response.status);
+        window.close();
+      });
+    }
+  });
+}
