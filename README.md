@@ -21,10 +21,5 @@
 
 ## Screenshots
 
-### 기본 화면
-
-![기본](./images/screenshots/cover.png)
-
-### 다크 모드
-
-![다크모드](./images/screenshots/cover2.png)
+<img src="./images/screenshots/cover.png" width="45%"></img>
+<img src="./images/screenshots/cover2.png" width="45%"></img>
