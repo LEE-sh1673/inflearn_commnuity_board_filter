@@ -3,14 +3,14 @@
   "name": "인프런 커뮤니티 답변 정렬기",
   "version": "1.0.0",
   "icons": {
-    "16": "img/inflearn_logo.png",
-    "48": "img/inflearn_logo.png",
-    "128": "img/inflearn_logo.png"
+    "16": "images/icons/inflearn_logo.png",
+    "48": "images/icons/inflearn_logo.png",
+    "128": "images/icons/inflearn_logo.png"
   },
   "content_scripts": [
     {
       "matches": ["https://www.inflearn.com/*"],
-      "js": ["index.js"]
+      "js": ["content.js"]
     }
   ],
   "permissions": ["activeTab", "tabs"],
